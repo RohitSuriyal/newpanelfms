@@ -27,6 +27,7 @@ Route::get("/practice",function(){
 
 
 Route::post("/login", [AuthController::class, 'login'])->name("login");
+Route::view("/home", "home")->name("home");
 Route::middleware('authentication')->group(function () {
 
   Route::post("/formdata",[Authcontroller::class,"formdata"])->name("formdata");
