@@ -34,8 +34,8 @@ Route::middleware('authentication')->group(function () {
 
     Route::post("/table", [Authcontroller::class, "table"]);
 
-    Route::view("/home", "home")->name("home");
-    $schooname = DB::table("schools")->select("name")->get();
+    // Route::view("/home", "home")->name("home");
+    // $schooname = DB::table("schools")->select("name")->get();
 
 
     // Route::view("/addblog","addblog")->name("addblog");
