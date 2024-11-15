@@ -27,15 +27,15 @@ Route::get("/practice",function(){
 
 
 Route::post("/login", [AuthController::class, 'login'])->name("login");
-Route::view("/home", "home")->name("home");
+
 Route::middleware('authentication')->group(function () {
 
   Route::post("/formdata",[Authcontroller::class,"formdata"])->name("formdata");
 
     Route::post("/table", [Authcontroller::class, "table"]);
 
-    // Route::view("/home", "home")->name("home");
-    // $schooname = DB::table("schools")->select("name")->get();
+    Route::view("/home", "home")->name("home");
+    $schooname = DB::table("schools")->select("name")->get();
 
 
     // Route::view("/addblog","addblog")->name("addblog");
