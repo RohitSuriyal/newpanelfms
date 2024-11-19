@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\BlogTable;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 
 class Authcontroller extends Controller
@@ -21,14 +22,15 @@ class Authcontroller extends Controller
     public function update_blog(Request $request)
     {
 
-
-        $data = DB::table("blog")->where("id", $request->id)->get();
-
-
-        $schoolname = DB::table('schools')->select('name', 'id')->get();
-        $id = $request->id;
-
-        return view("update", compact('data', 'schoolname', 'id'));
+        try {
+            $data = DB::table("blog")->where("id", $request->id)->get();
+            $schoolname = DB::table('schools')->select('name', 'id')->get();
+            $id = $request->id;
+            return view("update", compact('data', 'schoolname', 'id'));
+        } catch (\Exception $e) {
+            Log::error('Error in update_blog method: ' . $e->getMessage());
+            return response()->view('errors.custom', [], 500);
+        }
     }
 
 
