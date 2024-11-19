@@ -25,12 +25,19 @@ Route::get("/practice", function () {
 })->name("practice");
 Route::view("/home", "home")->name("home");
 
-
+Route::post("/formdata", [Authcontroller::class, "formdata"])->name("formdata");
 Route::post("/login", [AuthController::class, 'login'])->name("login");
+Route::get('/addblog', function () {
+  // Retrieve the school names
+  $schoolname = DB::table('schools')->select('name', 'id')->get();
+
+  // Pass the data directly to the view
+  return view('addblog', compact('schoolname'));
+})->name('addblog');
 
 Route::middleware('authentication')->group(function () {
 
-  Route::post("/formdata", [Authcontroller::class, "formdata"])->name("formdata");
+ 
 
   Route::post("/table", [Authcontroller::class, "table"]);
 
@@ -38,14 +45,7 @@ Route::middleware('authentication')->group(function () {
 
 
   // Route::view("/addblog","addblog")->name("addblog");
-  Route::get('/addblog', function () {
-    // Retrieve the school names
-    $schoolname = DB::table('schools')->select('name', 'id')->get();
-
-    // Pass the data directly to the view
-    return view('addblog', compact('schoolname'));
-  })->name('addblog');
-
+ 
 
   Route::post("/getdata", [Authcontroller::class, "getdata"]);
 
