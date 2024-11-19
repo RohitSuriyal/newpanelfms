@@ -154,7 +154,8 @@ class Authcontroller extends Controller
     {
 
         $image = $request->file('image');
-
+print_r("rohit");
+die;
         if ($image) {
             // Assuming the image name is passed as part of the request, you could use a unique identifier or filename
             $imageName = $image->getClientOriginalName();
