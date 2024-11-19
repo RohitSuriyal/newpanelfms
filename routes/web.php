@@ -37,16 +37,23 @@ Route::get('/addblog', function () {
   return view('addblog', compact('schoolname'));
 })->name('addblog');
 
-Route::get("/update", function (Request $request) {
+// Route::get("/update", function (Request $request) {
 
-  print_r("rafdhvfjdsfdsf");
+//   print_r("rafdhvfjdsfdsf");
+//   die;
+//   $data = DB::table("blog")->where("id", $request->id)->get();
+//   $schoolname = DB::table('schools')->select('name', 'id')->get();
+//   $id = $request->id;
+//   return view("update", compact('data', 'schoolname', 'id'));
+// })->name('update_blog');
+Route::get('/update', function () {
+  // Print a message when the route is accessed
+  dd("You are hitting the update route!");
   die;
-  $data = DB::table("blog")->where("id", $request->id)->get();
-  $schoolname = DB::table('schools')->select('name', 'id')->get();
-  $id = $request->id;
-  return view("update", compact('data', 'schoolname', 'id'));
-})->name('update_blog');
 
+  // If you want to return something, like a view or data:
+  return view('update');
+})->name('update_blog');
 
 
 
