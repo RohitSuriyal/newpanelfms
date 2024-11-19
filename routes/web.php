@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authcontroller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +36,19 @@ Route::get('/addblog', function () {
   // Pass the data directly to the view
   return view('addblog', compact('schoolname'));
 })->name('addblog');
-Route::get("/update", [Authcontroller::class, "update_blog"])->name('update_blog');
+Route::get("/update", function(Request $request){
+
+  print_r($request->id);
+  die;
+  $data = DB::table("blog")->where("id", $request->id)->get();
+            $schoolname = DB::table('schools')->select('name', 'id')->get();
+            $id = $request->id;
+            return view("update", compact('data', 'schoolname', 'id'));
+
+
+
+
+})->name('update_blog');
 
 
  
@@ -52,7 +66,7 @@ Route::get("/update", [Authcontroller::class, "update_blog"])->name('update_blog
 
 
   
-  Route::post("/updatedata",[Authcontroller::class,"updateblogdata"])->name("updateblogdata");
+  Route::post("/updatedata",function(){})->name("updateblogdata");
   Route::get('/logout', function () {
     // Log out the user
     Auth::logout();
