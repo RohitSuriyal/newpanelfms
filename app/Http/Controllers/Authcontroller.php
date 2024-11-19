@@ -126,9 +126,9 @@ class Authcontroller extends Controller
             $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-success btn-xs view">
             View
         </a>';
-            $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-warning btn-xs view">
-            update
-        </a>';
+        $sub_array[] = '<a href="' . route('update_blog') . '" class="btn btn-warning btn-xs view">
+        update
+    </a>';
             $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-danger btn-xs view">
         delete
         </a>';
