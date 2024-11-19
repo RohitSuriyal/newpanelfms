@@ -30,11 +30,10 @@ Route::post("/login", [AuthController::class, 'login'])->name("login");
 Route::get('/addblog', function () {
   // Retrieve the school names
   $schoolname = DB::table('schools')->select('name', 'id')->get();
-  Route::get("/update", [Authcontroller::class, "update_blog"])->name('update_blog');
+
   // Pass the data directly to the view
   return view('addblog', compact('schoolname'));
 })->name('addblog');
-
 Route::middleware('authentication')->group(function () {
 
  
@@ -47,10 +46,11 @@ Route::middleware('authentication')->group(function () {
   // Route::view("/addblog","addblog")->name("addblog");
  
 
+
   Route::post("/getdata", [Authcontroller::class, "getdata"]);
 
 
- 
+  Route::get("/update", [Authcontroller::class, "update_blog"])->name('update_blog');
   Route::post("/updatedata",[Authcontroller::class,"updateblogdata"])->name("updateblogdata");
   Route::get('/logout', function () {
     // Log out the user
