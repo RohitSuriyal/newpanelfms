@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authcontroller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,40 +17,51 @@ use Illuminate\Support\Facades\DB;
 */
 
 Route::get('/', function () {
-    return view('login');
+  return view('login');
 })->name("loginview");
-Route::get("/practice",function(){
- $user=DB::table("user")->pluck("password");
+Route::get("/practice", function () {
+  $user = DB::table("user")->pluck("password");
   dd($user);
- 
 })->name("practice");
-
+Route::view("/home", "home")->name("home");
 
 
 Route::post("/login", [AuthController::class, 'login'])->name("login");
 
 Route::middleware('authentication')->group(function () {
 
-  Route::post("/formdata",[Authcontroller::class,"formdata"])->name("formdata");
+  Route::post("/formdata", [Authcontroller::class, "formdata"])->name("formdata");
 
-    Route::post("/table", [Authcontroller::class, "table"]);
+  Route::post("/table", [Authcontroller::class, "table"]);
 
-    Route::view("/home", "home")->name("home");
-    $schooname = DB::table("schools")->select("name")->get();
-
-
-    // Route::view("/addblog","addblog")->name("addblog");
-    Route::get('/addblog', function () {
-        // Retrieve the school names
-        $schoolname = DB::table('schools')->select('name')->get();
-
-        // Pass the data directly to the view
-        return view('addblog', compact('schoolname'));
-    })->name('addblog');
+ 
 
 
-    Route::post("/getdata",[Authcontroller::class,"getdata"]);
+  // Route::view("/addblog","addblog")->name("addblog");
+  Route::get('/addblog', function () {
+    // Retrieve the school names
+    $schoolname = DB::table('schools')->select('name', 'id')->get();
+
+    // Pass the data directly to the view
+    return view('addblog', compact('schoolname'));
+  })->name('addblog');
+
+
+  Route::post("/getdata", [Authcontroller::class, "getdata"]);
+
+
+  Route::get("/update", [Authcontroller::class, "update_blog"])->name('update_blog');
+  Route::post("/updatedata",[Authcontroller::class,"updateblogdata"])->name("updateblogdata");
+  Route::get('/logout', function () {
+    // Log out the user
+    Auth::logout();
+    
+    // Invalidate the session and regenerate the CSRF token for security
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    
+    // Redirect the user to a desired route after logout
+    return redirect('/');
+})->name("logout");
+
 });
-
-
-
