@@ -37,8 +37,8 @@
 
 <body>
 
-    <div class="border border-danger border-2 d-flex justify-content-center align-items-center login_background" style="height:100vh">
-        <div class="w-25 shadow rounded p-3">
+    <div class=" d-flex justify-content-center align-items-center login_background" style="height:100vh">
+        <div class="col-md-4 shadow rounded p-3 widthform">
             <form method="post" class="px-5 py-5" action="{{ route('login') }}" style="background-color:white;border-radius:10px">
                 @csrf
                 <h3 class="fw-bold mb-4 text-center">LOGIN</h3>

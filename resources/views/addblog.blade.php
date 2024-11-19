@@ -50,7 +50,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="{{asset('formdata')}}" enctype="multipart/form-data">
+                <form id="addform" method="post" action="{{route('formdata')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -77,11 +77,16 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Category</label>
-                            <input name="category" class="form-control">
+                            <select name="category" class="form-control">
+                            <option value="Technology">Technology</option>
+                            <option value="Education">Education</option>
+                            <option value="School">School</option>
+                            </select>
+                           
                         </div>
                         <div class="col-md-6">
                             <label>Date</label>
-                            <input class="form-control" name="date">
+                            <input type="date" class="form-control" name="date">
 
 
                         </div>
@@ -103,11 +108,11 @@
                             <label>
                                 School
                             </label>
-                            <select class="form-control w-100">
+                            <select name="school" class="form-control w-100">
                                 <option selected>Select school</option>
                                 @foreach($schoolname as $school)
 
-                                <option>{{$school->name}}</option>
+                                <option value="{{$school->id}}">{{$school->name}}</option>
 
                                 @endforeach
 
@@ -131,6 +136,30 @@
     </div>
 </div>
 @include('layout.footer')
+@if(isset($successMessage))
+    <script>
+     Swal.fire({
+            title: 'Success!',
+            text: "{{ $successMessage }}",
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+        // Optionally reset the form after the alert (if needed)
+        $("#addform")[0].reset();
+    </script>
+@endif
+@if(isset($successMessageupdate))
+    <script>
+     Swal.fire({
+            title: 'Success!',
+            text: "{{ $successMessageupdate }}",
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+        // Optionally reset the form after the alert (if needed)
+        $("#addform")[0].reset();
+    </script>
+@endif
 <script>
     $(document).ready(function() {
 

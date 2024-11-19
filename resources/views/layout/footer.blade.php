@@ -24,14 +24,10 @@
     window.addEventListener("load", function() {
         setTimeout(function() {
             document.getElementById("overlay").style.display = "none";
-        }, 1000); // 3000 ms = 3 seconds
+        }, 100); // 3000 ms = 3 seconds
     });
-    editor.on('insertElement', function(event) {
-        var element = event.data; // Get the inserted element
-        if (element.getName() == 'img') { // Check if the inserted element is an image
-            element.addClass('img-custom'); // Add your custom class to the image
-        }
-    });
+
+    
 
     CKEDITOR.on('instanceReady', function(ev) {
         ev.editor.on('paste', function(event) {
@@ -55,5 +51,11 @@
                 event.cancel(); // Cancel the default paste behavior
             }
         });
+    });
+    editor.on('insertElement', function(event) {
+        var element = event.data; // Get the inserted element
+        if (element.getName() == 'img') { // Check if the inserted element is an image
+            element.addClass('img-custom'); // Add your custom class to the image
+        }
     });
 </script>
