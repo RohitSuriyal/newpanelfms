@@ -35,7 +35,7 @@ Route::get('/addblog', function () {
   return view('addblog', compact('schoolname'));
 })->name('addblog');
 Route::get("/update", [Authcontroller::class, "update_blog"])->name('update_blog');
-Route::middleware('authentication')->group(function () {
+
 
  
 
@@ -65,4 +65,4 @@ Route::middleware('authentication')->group(function () {
     return redirect('/');
 })->name("logout");
 
-});
+
