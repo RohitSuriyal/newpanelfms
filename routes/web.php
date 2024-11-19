@@ -36,47 +36,42 @@ Route::get('/addblog', function () {
   // Pass the data directly to the view
   return view('addblog', compact('schoolname'));
 })->name('addblog');
-Route::get("/update", function(Request $request){
 
-  print_r($request->id);
+Route::get("/update", function (Request $request) {
+
+  print_r("rafdhvfjdsfdsf");
   die;
   $data = DB::table("blog")->where("id", $request->id)->get();
-            $schoolname = DB::table('schools')->select('name', 'id')->get();
-            $id = $request->id;
-            return view("update", compact('data', 'schoolname', 'id'));
-
-
-
-
+  $schoolname = DB::table('schools')->select('name', 'id')->get();
+  $id = $request->id;
+  return view("update", compact('data', 'schoolname', 'id'));
 })->name('update_blog');
 
 
- 
-
-  Route::post("/table", [Authcontroller::class, "table"]);
-
- 
 
 
-  // Route::view("/addblog","addblog")->name("addblog");
- 
+Route::post("/table", [Authcontroller::class, "table"]);
 
 
-  Route::post("/getdata", [Authcontroller::class, "getdata"]);
 
 
-  
-  Route::post("/updatedata",function(){})->name("updateblogdata");
-  Route::get('/logout', function () {
-    // Log out the user
-    Auth::logout();
-    
-    // Invalidate the session and regenerate the CSRF token for security
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-    
-    // Redirect the user to a desired route after logout
-    return redirect('/');
+// Route::view("/addblog","addblog")->name("addblog");
+
+
+
+Route::post("/getdata", [Authcontroller::class, "getdata"]);
+
+
+
+Route::post("/updatedata", function () {})->name("updateblogdata");
+Route::get('/logout', function () {
+  // Log out the user
+  Auth::logout();
+
+  // Invalidate the session and regenerate the CSRF token for security
+  request()->session()->invalidate();
+  request()->session()->regenerateToken();
+
+  // Redirect the user to a desired route after logout
+  return redirect('/');
 })->name("logout");
-
-
