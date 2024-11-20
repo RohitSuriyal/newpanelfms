@@ -22,15 +22,12 @@ class Authcontroller extends Controller
     public function update_blog(Request $request)
     {
 
-        try {
+    
             $data = DB::table("blog")->where("id", $request->id)->get();
             $schoolname = DB::table('schools')->select('name', 'id')->get();
             $id = $request->id;
             return view("update", compact('data', 'schoolname', 'id'));
-        } catch (\Exception $e) {
-            Log::error('Error in update_blog method: ' . $e->getMessage());
-            return response()->view('errors.custom', [], 500);
-        }
+        
     }
 
 
@@ -222,7 +219,7 @@ class Authcontroller extends Controller
     public function updateblogdata(Request $request)
     {
 
-
+        
 
         $image = $request->file('image_update');
 
@@ -265,7 +262,7 @@ class Authcontroller extends Controller
         $written_by = $request->writtenby_update;
         $school = $request->school_update;
         $id = $request->id_update;
-        
+      
 
         $query = DB::table("blog")->where("id", $id)->update([
 
@@ -287,6 +284,8 @@ class Authcontroller extends Controller
             $successMessageupdate = 'Blog updated successfully!';
 
             // Return the view, passing both the success message and the existing school data
+            print_r("dsfsfsd");
+            die;
             return view('addblog', compact('schoolname', 'successMessageupdate'));
         } else {
             $schoolname = DB::table('schools')->select('name', 'id')->get();

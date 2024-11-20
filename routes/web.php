@@ -71,7 +71,7 @@ Route::post("/getdata", [Authcontroller::class, "getdata"]);
 
 
 
-Route::post("/updatedata", function () {})->name("updateblogdata");
+Route::post("/updatedata",[Authcontroller::class,"updateblogdata"])->name("updateblogdata");
 Route::get('/logout', function () {
   // Log out the user
   Auth::logout();
