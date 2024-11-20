@@ -284,8 +284,7 @@ class Authcontroller extends Controller
             $successMessageupdate = 'Blog updated successfully!';
 
             // Return the view, passing both the success message and the existing school data
-            print_r("dsfsfsd");
-            die;
+           
             return view('addblog', compact('schoolname', 'successMessageupdate'));
         } else {
             $schoolname = DB::table('schools')->select('name', 'id')->get();
