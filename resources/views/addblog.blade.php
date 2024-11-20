@@ -136,11 +136,24 @@
     </div>
 </div>
 @include('layout.footer')
-@if(isset($successMessage))
+@if(session('successMessage'))
     <script>
      Swal.fire({
             title: 'Success!',
-            text: "{{ $successMessage }}",
+            text: "{{ session('successMessage') }}",
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+        // Optionally reset the form after the alert (if needed)
+        $("#addform")[0].reset();
+    </script>
+   
+@endif
+@if(session('successMessageupdate'))
+    <script>
+        Swal.fire({
+            title: 'Success!',
+            text: "{{ session('successMessageupdate') }}",
             icon: 'success',
             confirmButtonText: 'OK'
         });
@@ -148,19 +161,13 @@
         $("#addform")[0].reset();
     </script>
 @endif
-@if(isset($successMessageupdate))
-    <script>
-     Swal.fire({
-            title: 'Success!',
-            text: "{{ $successMessageupdate }}",
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
-        // Optionally reset the form after the alert (if needed)
-        $("#addform")[0].reset();
-    </script>
-@endif
+
 <script>
+     $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $(document).ready(function() {
 
         $("#practice").DataTable({
@@ -184,11 +191,7 @@
 
 
     });
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+   
 
     $(document).ready(function() {
         $('#tags').select2({

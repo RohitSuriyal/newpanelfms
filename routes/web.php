@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +20,22 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
+
+  
+
   return view('login');
 })->name("loginview");
 Route::get("/practice", function () {
   $user = DB::table("user")->pluck("password");
   dd($user);
 })->name("practice");
-Route::view("/home", "home")->name("home");
+Route::get('/home', function () {
+  // Destroy the session
+  Session::flush(); // Clears all session data and invalidates the session
+
+  // Return the view
+  return view('home');
+})->name('home');
 
 Route::post("/formdata", [Authcontroller::class, "formdata"])->name("formdata");
 Route::post("/login", [AuthController::class, 'login'])->name("login");
@@ -39,7 +49,7 @@ Route::get('/addblog', function () {
 
 Route::get("/update", function (Request $request) {
 
-  
+
   $data = DB::table("blog")->where("id", $request->id)->get();
   $schoolname = DB::table('schools')->select('name', 'id')->get();
   $id = $request->id;
@@ -71,7 +81,7 @@ Route::post("/getdata", [Authcontroller::class, "getdata"]);
 
 
 
-Route::post("/updatedata",[Authcontroller::class,"updateblogdata"])->name("updateblogdata");
+Route::post("/updatedata", [Authcontroller::class, "updateblogdata"])->name("updateblogdata");
 Route::get('/logout', function () {
   // Log out the user
   Auth::logout();

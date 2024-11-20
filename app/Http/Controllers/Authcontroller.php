@@ -210,7 +210,8 @@ class Authcontroller extends Controller
             $successMessage = 'Blog post created successfully!';
 
             // Return the view, passing both the success message and the existing school data
-            return view('addblog', compact('schoolname', 'successMessage'));
+            return redirect()->route('addblog')->with('successMessage', 'Your data has been updated successfully!');
+
         } else {
             // If the insert fails, redirect with an error message
             return redirect()->route('addblog')->with('error', 'There was an error creating the blog post.');
@@ -285,7 +286,8 @@ class Authcontroller extends Controller
 
             // Return the view, passing both the success message and the existing school data
            
-            return view('addblog', compact('schoolname', 'successMessageupdate'));
+            return redirect('addblog')->with('successMessageupdate', 'Your data has been updated successfully!');
+
         } else {
             $schoolname = DB::table('schools')->select('name', 'id')->get();
 
