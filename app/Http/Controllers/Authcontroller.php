@@ -126,9 +126,10 @@ class Authcontroller extends Controller
             $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-success btn-xs view">
             View
         </a>';
-        $sub_array[] = '<a href="' . route('update_blog') . '" class="btn btn-warning btn-xs view">
+        $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-warning btn-xs view">
         update
-    </a>';
+        </a>';
+     
             $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-danger btn-xs view">
         delete
         </a>';
@@ -154,8 +155,7 @@ class Authcontroller extends Controller
     {
 
         $image = $request->file('image');
-print_r("rohit");
-die;
+
         if ($image) {
             // Assuming the image name is passed as part of the request, you could use a unique identifier or filename
             $imageName = $image->getClientOriginalName();
