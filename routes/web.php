@@ -30,11 +30,14 @@ Route::get("/practice", function () {
   dd($user);
 })->name("practice");
 Route::get('/home', function () {
-  // Destroy the session
+  
   Session::flush(); // Clears all session data and invalidates the session
+  $blogcount=DB::table("blog")->count();
+  $schoolcount=DB::table("schools")->count();
+
 
   // Return the view
-  return view('home');
+  return view('home',compact('blogcount','schoolcount'));
 })->name('home');
 
 Route::post("/formdata", [Authcontroller::class, "formdata"])->name("formdata");
