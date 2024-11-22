@@ -38,6 +38,8 @@
 
     <!-- SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="{{asset('css/addschool.css')}}">
+
 
     <style>
         /* HTML: <div class="loader"></div> */
@@ -90,6 +92,8 @@
                 transform: rotate(1turn)
             }
         }
+
+        
     </style>
 </head>
 <div class="overlay" id="overlay">
@@ -142,6 +146,40 @@
                     </div>
                 </div>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Schools</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="{{route('addschool')}}"><i class="fa-solid fa-plus" style="color: #B197FC;"></i>Add School</a>
+                        <a class="collapse-item" href="utilities-border.html">Manage schools</a>
+
+                    </div>
+                </div>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#rohit"
+                    aria-expanded="true" aria-controls="rohit">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Schools</span>
+                </a>
+                <div id="rohit" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="collapse-item" href="utilities-color.html"><i class="fa-solid fa-plus" style="color: #B197FC;"></i>Add School</a>
+                        <a class="collapse-item" href="utilities-border.html">Manage schools</a>
+
+                    </div>
+                </div>
+            </li> -->
+
+
 
             <!-- Nav Item - Utilities Collapse Menu -->
 
@@ -201,7 +239,7 @@
                         <!-- Nav Item - Messages -->
 
 
-                       
+
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
@@ -226,8 +264,8 @@
                                     Activity Log -->
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="{{route('logout')}}"  class="dropdown-item"  data-target="#logoutModal">
-                                    <i  class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                <a href="{{route('logout')}}" class="dropdown-item" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>

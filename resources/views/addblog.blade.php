@@ -41,7 +41,7 @@
 
 <!-- modal for the pop up -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width:48%!important" role="document">
+    <div class="modal-dialog modal-dialog-centered" style="max-width:64%!important" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Blog Details</h3>
@@ -159,6 +159,18 @@
         });
         // Optionally reset the form after the alert (if needed)
         $("#addform")[0].reset();
+    </script>
+@endif
+@if(session('delelteblog'))
+    <script>
+        Swal.fire({
+    title: 'Deleted!',
+    text: "{{ session('delelteblog') }}", // You can pass a custom success message for delete operation
+    icon: 'success',
+    confirmButtonText: 'OK'
+});
+
+       
     </script>
 @endif
 

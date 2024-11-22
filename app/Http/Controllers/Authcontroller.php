@@ -120,14 +120,14 @@ class Authcontroller extends Controller
             $sub_array[] = $row->heading;
             $sub_array[] = '<img src="' . $row->image . '" alt="Image" style="width:100px;height:auto;" />';
 
-            $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-success btn-xs view">
+            $sub_array[] = '<a href="' . route('view_blog', ['id' => $row->id]) . '" class="btn btn-success btn-xs view">
             View
         </a>';
         $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-warning btn-xs view">
         update
         </a>';
      
-            $sub_array[] = '<a href="' . route('update_blog', ['id' => $row->id]) . '" class="btn btn-danger btn-xs view">
+        $sub_array[] = '<a href="' . route('deleteblog', ['id' => $row->id]) . '" class="btn btn-danger btn-xs ">
         delete
         </a>';
 
@@ -295,7 +295,48 @@ class Authcontroller extends Controller
             $successnoMessageupdate = 'No data updated';
 
             // Return the view, passing both the success message and the existing school data
-            return view('addblog', compact('schoolname', 'successnoMessageupdate'));
+            return redirect('addblog')->with('successMessagenoupdate', 'Your data has been updated successfully!');
         }
     }
+    public function deleteblog(Request $request){
+        $id = $request->id;
+        $image = DB::table("blog")->where("id", $id)->value("image");
+        if ($image) {
+            // Delete the image from S3
+            if (Storage::disk('s3')->exists($image)) {
+                Storage::disk('s3')->delete($image);
+            }
+    
+            // Delete the row from the database
+            DB::table('blog')->where('id', $id)->delete();
+    
+           
+
+ 
+            return redirect('addblog')->with('delelteblog', 'Your data has been deleted successfully!');
+
+
+    }
+}
+public function view_blog(Request $request){
+    $id=$request->id;
+
+    $data=DB::table('blog')->where("id",$id)->get();
+    $school_id=$data[0]->School;
+    $school_name=DB::table("schools")->where("id",$school_id)->value("name");
+   
+
+
+
+   
+
+
+    return view("viewblog", compact("data", "school_name"));
+
+
+
+
+
+
+}
 }

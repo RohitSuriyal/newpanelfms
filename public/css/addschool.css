@@ -1,0 +1,64 @@
+.tab-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+   
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* Blue for non-active tabs */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+.tab:hover {
+    background-color: #28a745; /* Darker blue on hover */
+}
+
+.tab.active {
+    background-color: #28a745; /* Green for active tab */
+    transform: scale(1.1);
+}
+
+.content-container {
+    width: auto;
+    margin:0% 15%;
+   
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.content.active-content {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
