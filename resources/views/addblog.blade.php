@@ -78,11 +78,11 @@
                         <div class="col-md-6">
                             <label>Category</label>
                             <select name="category" class="form-control">
-                            <option value="Technology">Technology</option>
-                            <option value="Education">Education</option>
-                            <option value="School">School</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Education">Education</option>
+                                <option value="School">School</option>
                             </select>
-                           
+
                         </div>
                         <div class="col-md-6">
                             <label>Date</label>
@@ -137,45 +137,43 @@
 </div>
 @include('layout.footer')
 @if(session('successMessage'))
-    <script>
-     Swal.fire({
-            title: 'Success!',
-            text: "{{ session('successMessage') }}",
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
-        // Optionally reset the form after the alert (if needed)
-        $("#addform")[0].reset();
-    </script>
-   
+<script>
+    Swal.fire({
+        title: 'Success!',
+        text: "{{ session('successMessage') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+    // Optionally reset the form after the alert (if needed)
+    $("#addform")[0].reset();
+</script>
+
 @endif
 @if(session('successMessageupdate'))
-    <script>
-        Swal.fire({
-            title: 'Success!',
-            text: "{{ session('successMessageupdate') }}",
-            icon: 'success',
-            confirmButtonText: 'OK'
-        });
-        // Optionally reset the form after the alert (if needed)
-        $("#addform")[0].reset();
-    </script>
+<script>
+    Swal.fire({
+        title: 'Success!',
+        text: "{{ session('successMessageupdate') }}",
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+    // Optionally reset the form after the alert (if needed)
+    $("#addform")[0].reset();
+</script>
 @endif
 @if(session('delelteblog'))
-    <script>
-        Swal.fire({
-    title: 'Deleted!',
-    text: "{{ session('delelteblog') }}", // You can pass a custom success message for delete operation
-    icon: 'success',
-    confirmButtonText: 'OK'
-});
-
-       
-    </script>
+<script>
+    Swal.fire({
+        title: 'Deleted!',
+        text: "{{ session('delelteblog') }}", // You can pass a custom success message for delete operation
+        icon: 'success',
+        confirmButtonText: 'OK'
+    });
+</script>
 @endif
 
 <script>
-     $.ajaxSetup({
+    $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
@@ -203,7 +201,7 @@
 
 
     });
-   
+
 
     $(document).ready(function() {
         $('#tags').select2({

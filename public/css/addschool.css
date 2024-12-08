@@ -1,6 +1,5 @@
 .tab-container {
-    display: flex;
-    justify-content: space-between;
+   
     width: 100%;
     
     background-color: #ffffff;
@@ -14,7 +13,7 @@
 .tab {
     flex: 1;
     text-align: center;
-    padding: 15px 15px;
+    padding: 8px 0px;
     text-decoration: none;
     color: white;
     background-color: #007bff; /* Blue for non-active tabs */
@@ -30,7 +29,7 @@
 
 .tab.active {
     background-color: #28a745; /* Green for active tab */
-    transform: scale(1.1);
+    
 }
 
 .content-container {
@@ -51,6 +50,32 @@
 .content.active-content {
     display: block;
 }
+#search-box {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#suggestions {
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    position: relative;
+}
+
+#suggestions div {
+    padding: 10px;
+    cursor: pointer;
+    background: #fff;
+}
+
+#suggestions div:hover {
+    background: #f0f0f0;
+}
 
 @keyframes fadeIn {
     from {
@@ -61,4 +86,7 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+.select2-container .select2-selection {
+    padding: 5px; /* Adjust the padding as needed */
 }

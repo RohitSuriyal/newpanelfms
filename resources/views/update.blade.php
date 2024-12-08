@@ -8,15 +8,14 @@
 
     <!-- modal for the pop up -->
     <div tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <a href="{{route('addblog')}}"><button class="btn btn-primary"><i class="fa-solid fa-arrow-left mr-2" style="color: #f0f2f4;"></i>All blogs</button></a> 
         <div class="modal-dialog modal-dialog-centered" style="max-width:64%!important" role="document">
 
 
             <div class="modal-content">
                 <div class="modal-header">
                     <h3>Update Blog Details</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    
                 </div>
 
                 <div class="modal-body">

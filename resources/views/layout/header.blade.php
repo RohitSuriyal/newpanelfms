@@ -42,8 +42,6 @@
 
 
     <style>
-        /* HTML: <div class="loader"></div> */
-
         .overlay {
             position: fixed;
             top: 0;
@@ -92,8 +90,6 @@
                 transform: rotate(1turn)
             }
         }
-
-        
     </style>
 </head>
 <div class="overlay" id="overlay">
@@ -136,12 +132,12 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fa-solid fa-blog" style="color: #B197FC;"></i>
-                    <span>BLOG</span>
+                    <span>BLOGS</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
 
-                        <a class="collapse-item" href="{{route('addblog')}}"><i class="fa-solid fa-plus" style="color: #B197FC;"></i> Add Blog</a>
+                        <a class="collapse-item" href="{{route('addblog')}}"> All Blogs</a>
                         <!-- <a class="collapse-item" href="cards.html">Manage Blog</a> -->
                     </div>
                 </div>
