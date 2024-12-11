@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\AuthenticationException;
-
+use App\Http\Controllers\Api\V1\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,16 +41,24 @@ Route::post('/login', function (Request $request) {
         'expires_in' => 60, // Expiry time in seconds
     ]);
 });
+
+
 Route::middleware(['auth:sanctum'])->group(function () {
-    Route::get("/name", function (Request $request) {
-        
-            // If the user is authenticated, return a successful response
-            return response()->json([
-                'message' => 'This is good',
-                'status' => 'success',
-            ]);
+
+    Route::prefix('v1')->namespace('Api\V1')->group(function () {
+        Route::post('/logintoapp', [UserController::class,"logintoapp"]);
        
     });
+
+    // Route::get("/name", function (Request $request) {
+        
+    //         // If the user is authenticated, return a successful response
+    //         return response()->json([
+    //             'message' => 'This is good',
+    //             'status' => 'success',
+    //         ]);
+       
+    // });
     // Route::prefix('v1')->namespace('Api\V1')->group(function () {
     //     Route::get('/rohit', [UserController::class,"rohit"]);
 
