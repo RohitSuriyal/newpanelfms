@@ -461,6 +461,7 @@ class Authcontroller extends Controller
         $data["total_fre"] = $request->totalfre;
         $data["monthly_cost"] = $request->monthlyfee;
         $data["monthly_fre"] = $request->monthlyfre;
+        $data["available"]=$request->available;
 
         if ($request->class == "Prenursery") {
             session(["Prenursery" => $data]);

@@ -508,6 +508,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
+
+                </div>
 
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
@@ -735,6 +745,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
+
+                </div>
 
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
@@ -956,6 +976,16 @@
                     </div>
 
 
+
+                </div>
+                <div class="row mt-3">
+                     <div class="col-md-12">
+                           <label>Availbale</label>
+                           <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                           </select>
+                     </div>
 
                 </div>
 
@@ -1183,7 +1213,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -1409,7 +1448,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -1633,7 +1681,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -1854,6 +1911,16 @@
                     </div>
 
 
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
                 </div>
 
@@ -2079,7 +2146,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -2302,7 +2378,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -2525,7 +2610,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -2748,7 +2842,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -2969,6 +3072,16 @@
                     </div>
 
 
+
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label>Availbale</label>
+                        <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                        </select>
+                    </div>
 
                 </div>
 
@@ -3194,7 +3307,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                     <div class="col-md-12">
+                           <label>Availbale</label>
+                           <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                           </select>
+                     </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -3417,7 +3539,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                     <div class="col-md-12">
+                           <label>Availbale</label>
+                           <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                           </select>
+                     </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -3640,7 +3771,16 @@
 
 
                 </div>
+                <div class="row mt-3">
+                     <div class="col-md-12">
+                           <label>Availbale</label>
+                           <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                           </select>
+                     </div>
 
+                </div>
                 <div class="d-flex justify-content-center mt-5">
                     <button class="btn btn-success w-25">Submit</button>
 
@@ -3861,6 +4001,16 @@
                     </div>
 
 
+
+                </div>
+                <div class="row mt-3">
+                     <div class="col-md-12">
+                           <label>Availbale</label>
+                           <select name="available" class="form-control">
+                            <option value="yes">yes</option>
+                            <option value="no">NO</option>
+                           </select>
+                     </div>
 
                 </div>
 
@@ -4545,7 +4695,7 @@
                     </form>
 
                 </div>
-                <div  id="III_eligibility" class="tab_eligibility my-5" style="display: none;">
+                <div id="III_eligibility" class="tab_eligibility my-5" style="display: none;">
                     <form class="form_eligibility" method="post" action="{{route('addeligibity')}}">
                         @csrf
                         <h4 class="text-center">Class III</h4>
@@ -6247,7 +6397,7 @@
 
 
 
-   
+
     @if(session("eligibility"))
     <script>
         var classname = "{{session('eligibility')}}";
