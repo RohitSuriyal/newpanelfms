@@ -18,9 +18,7 @@ use App\Http\Controllers\Api\V1\UserController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 Route::post('/login', function (Request $request) {
     // Find the user by email
     $user = User::where('name', $request->name)->first();
@@ -47,20 +45,16 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('v1')->namespace('Api\V1')->group(function () {
         Route::post('/logintoapp', [UserController::class,"logintoapp"]);
+
+        Route::post("/getschooldata",[UserController::class,"getschooldata"]);
+        Route::post("/schoolpage",[UserController::class,"schoolpage"]);
+        Route::post("/blogpage",[UserController::class,"blopage"]);
+
+
+
+      
        
     });
 
-    // Route::get("/name", function (Request $request) {
-        
-    //         // If the user is authenticated, return a successful response
-    //         return response()->json([
-    //             'message' => 'This is good',
-    //             'status' => 'success',
-    //         ]);
-       
-    // });
-    // Route::prefix('v1')->namespace('Api\V1')->group(function () {
-    //     Route::get('/rohit', [UserController::class,"rohit"]);
-
-    // });
+   
 });
