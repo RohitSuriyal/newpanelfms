@@ -48,7 +48,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
         Route::post("/getschooldata",[UserController::class,"getschooldata"]);
         Route::post("/schoolpage",[UserController::class,"schoolpage"]);
-        Route::post("/blogpage",[UserController::class,"blopage"]);
+        Route::post("/blogpage",[UserController::class,"blogpage"]);
 
 
 

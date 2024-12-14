@@ -100,7 +100,7 @@ class UserController extends Controller
         }
     }
 
-    public function blopage(Request $request)
+    public function blogpage(Request $request)
     {
         $id = $request->id;
         try {
