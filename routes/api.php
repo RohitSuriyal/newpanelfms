@@ -44,17 +44,14 @@ Route::post('/login', function (Request $request) {
 Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('v1')->namespace('Api\V1')->group(function () {
-        Route::post('/logintoapp', [UserController::class,"logintoapp"]);
+        Route::post('/logintoapp', [UserController::class, "logintoapp"]);
 
-        Route::post("/getschooldata",[UserController::class,"getschooldata"]);
-        Route::post("/schoolpage",[UserController::class,"schoolpage"]);
-        Route::post("/blogpage",[UserController::class,"blogpage"]);
-
-
+        Route::post("/getschooldata", [UserController::class, "getschooldata"]);
+        Route::post("/schoolpage", [UserController::class, "schoolpage"]);
+        Route::post("/blogpage", [UserController::class, "blogpage"]);
+        Route::post("/sendotp", [UserController::class, "sendotp"]);
+        Route::post("/confirmotp",[UserController::class,"confirmotp"]);
 
       
-       
     });
-
-   
 });
